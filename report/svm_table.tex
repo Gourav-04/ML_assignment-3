@@ -1,0 +1,23 @@
+\begin{table}[ht]\centering\small
+\caption{Complete SVM sweep. SV is the fraction of training points used as support vectors.}\label{tab:svm}
+\begin{tabular}{lrrrr}
+\toprule
+Kernel & $C$ & Train & Val & SV\\
+\midrule
+linear & 0.0001 & 28.9\% & 28.1\% & 99.9\%\\
+linear & 0.001 & 35.8\% & 34.5\% & 97.9\%\\
+linear & 0.01 & 39.5\% & 35.4\% & 95.5\%\\
+linear & 0.1 & 41.4\% & 35.6\% & 93.8\%\\
+linear & 1 & 45.1\% & 37.1\% & 92.5\%\\
+rbf & 0.0001 & 33.1\% & 31.2\% & 100.0\%\\
+rbf & 0.001 & 33.1\% & 31.2\% & 100.0\%\\
+rbf & 0.01 & 33.1\% & 31.2\% & 100.0\%\\
+rbf & 0.1 & 38.2\% & 35.4\% & 99.1\%\\
+rbf & 1 & 61.6\% & 42.1\% & 95.3\%\\
+poly & 0.0001 & 11.5\% & 11.1\% & 100.0\%\\
+poly & 0.001 & 11.5\% & 11.1\% & 100.0\%\\
+poly & 0.01 & 15.8\% & 14.8\% & 99.8\%\\
+poly & 0.1 & 33.4\% & 27.5\% & 98.3\%\\
+poly & 1 & 60.6\% & 33.6\% & 95.4\%\\
+\bottomrule\end{tabular}
+\end{table}

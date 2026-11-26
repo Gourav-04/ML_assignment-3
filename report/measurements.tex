@@ -1,0 +1,87 @@
+\newcommand{\Repo}{\url{https://github.com/Gourav-04/ML_assignment-3.git}}
+\newcommand{\Commit}{\texttt{8b7703628a78dba75164b250316a7a396e84c7de}}
+\newcommand{\LocalResult}{The clean patch network scored 52.10\% and random grouping scored 48.40\%. The signed clean-minus-shuffled difference was +3.7 points. The ordinary dense MLP scored 41.57\%. The paired patch difference cannot be attributed to a change in parameter count. Contiguous neighbourhoods helped the shared first layer.}
+\newcommand{\MemoryParams}{1,707,274}
+\newcommand{\MemoryResult}{The clean validation threshold was crossed at epoch 1. Assigned-label accuracy crossed at epoch 33. Under this definition, transferable learning preceded substantial random-label fitting. At epoch 65 the MLP predicted the assigned label on 61.20\% of flipped examples. Clean validation peaked at 38.74\% in epoch 30 and ended at 33.94\%. On the identical flipped images, original-label accuracy ended at 13.30\%.}
+\newcommand{\SpatialResult}{The clean-minus-shuffled gap was +13.8 percentage points for the CNN and -1.6 for the dense MLP. Holding tiles intact changed CNN accuracy by +6.5 points relative to full shuffling. This pattern supports sensitivity to local neighbourhoods. Tile boundaries and changed global positions limit finer attribution.}
+\newcommand{\ConfidenceResult}{CNN mean confidence on errors was 41.63\% on clean images, 31.89\% on pixel images, 37.43\% on tile images. Full shuffling changed the error count by +1384 out of 10,000 and mean error confidence by -9.7 points.}
+\newcommand{\ReconstructionResult}{Validation MSE selected width 128; test reconstruction errors also appear for the representation comparison required in Q3(c).}
+\newcommand{\DenoiseResult}{Frozen-CNN test accuracy was 26.78\% for corrupted, 26.28\% for clean AE, 27.05\% for denoising AE. Denoising changed accuracy by +0.27 percentage points relative to the corrupted image. It corrected 2379 previously wrong predictions and spoiled 2352 previously correct ones (paired exact McNemar $p=0.705$). The observed net change gives little evidence of a reliable improvement. The original clean-input CNN accuracy of 52.66\% shows how much discriminative information remains unrecovered.}
+\newcommand{\ProbeResult}{In order of increasing test MSE the widths were 128, 32, 8. In descending probe accuracy the widths were 128, 32, 8. The rankings agree in this sweep. Width is a shared explanatory variable, so this does not establish that improving MSE causes better classification.}
+\newcommand{\SvmResult}{Validation selected rbf with $C=1$; the frozen SVM achieved 42.79\% on test. The winner lies at the upper end of the evaluated grid; validation does not establish that it is a global optimum. For linear, validation peaked at $C=1$ (37.06\%); raising $C$ from 0.0001 to 1 moved training accuracy from 28.88\% to 45.14\%. At $C=1$ its train--validation gap was 8.08 points. For rbf, validation peaked at $C=1$ (42.10\%); raising $C$ from 0.0001 to 1 moved training accuracy from 33.06\% to 61.62\%. At $C=1$ its train--validation gap was 19.52 points. For poly, validation peaked at $C=1$ (33.64\%); raising $C$ from 0.0001 to 1 moved training accuracy from 11.46\% to 60.62\%. At $C=1$ its train--validation gap was 26.98 points. A wide positive gap at high $C$ indicates greater sensitivity to the training sample. The support-vector fraction in the plot counts each training point once across the binary subproblems.}
+\newcommand{\PairResult}{The combined error counts were cat/dog (353), automobile/truck (352), deer/frog (321). Of the six near-boundary test examples, 4 received an incorrect multiclass prediction, including 3 predictions outside the inspected pair.}
+\newcommand{\ClusterResult}{Validation silhouette by $k$ was 8 (0.077), 10 (0.067), 15 (0.058), 20 (0.044). The selected $k=8$ gave test ARI 0.049 and NMI 0.082. The cat and deer cluster histograms overlap by 90.40\% (sum of the smaller class-conditional mass in each cluster), while only 7.65\% of the two classes' images were confused with one another by the SVM. Similar unsupervised assignments can coexist with a separating supervised boundary.}
+\newcommand{\Headline}{The CNN's clean-to-shuffled accuracy gap was 13.84 points; the dense MLP's gap was -1.64 points.}
+\newcommand{\Repository}{\url{https://github.com/Gourav-04/ML_assignment-3.git}}
+\newcommand{\Revision}{8b7703628a78dba75164b250316a7a396e84c7de}
+\newcommand{\ChosenWidth}{128}
+\newcommand{\CleanAccuracy}{52.66\%}
+\newcommand{\PopulationRows}{Q1(a), Q2, Q3 & 45,000 & 4,500\\
+Q1(b) memorisation & 4,000 & 400\\
+Q4 SVM and clustering & 5,000 & 500\\}
+\newcommand{\LocalRows}{Dense, clean & 101,098 & 42.26 & 41.57\\
+Patch, contiguous & 100,410 & 51.94 & 52.10\\
+Patch, shuffled & 100,410 & 49.48 & 48.40\\}
+\newcommand{\MemoryRows}{1 & 22.00 & 18.20 & 9.60 & 20.88\\
+15 & 46.03 & 34.40 & 12.70 & 35.66\\
+30 & 59.27 & 32.30 & 18.20 & 38.74\\
+33 & 57.73 & 31.10 & 20.40 & 37.54\\
+50 & 71.87 & 23.00 & 38.30 & 34.92\\
+65 & 84.63 & 13.30 & 61.20 & 33.94\\}
+\newcommand{\SpatialRows}{MLP & clean & 101,098 & 41.57 & 5,843 & 34.50\\
+MLP & pixel & 101,098 & 43.21 & 5,679 & 35.45\\
+MLP & tile & 101,098 & 40.59 & 5,941 & 34.71\\
+CNN & clean & 100,074 & 52.66 & 4,734 & 41.63\\
+CNN & pixel & 100,074 & 38.82 & 6,118 & 31.89\\
+CNN & tile & 100,074 & 45.28 & 5,472 & 37.43\\}
+\newcommand{\EncoderRows}{8 & 80,283 & 0.02335 & 0.02346 & 29.22\\
+32 & 117,171 & 0.01444 & 0.01450 & 34.53\\
+128 & 264,723 & 0.01132 & 0.01136 & 39.78\\}
+\newcommand{\DenoiseRows}{Clean image (Q2) & 52.66 & 4,734 & 41.63\\
+corrupted & 26.78 & 7,322 & 54.83\\
+clean AE & 26.28 & 7,372 & 37.92\\
+denoising AE & 27.05 & 7,295 & 38.45\\}
+\newcommand{\SweepRows}{linear & 0.0001 & 28.88 & 28.12 & 99.90\\
+linear & 0.001 & 35.76 & 34.54 & 97.92\\
+linear & 0.01 & 39.46 & 35.38 & 95.48\\
+linear & 0.1 & 41.42 & 35.60 & 93.76\\
+linear & 1 & 45.14 & 37.06 & 92.50\\
+rbf & 0.0001 & 33.06 & 31.22 & 100.00\\
+rbf & 0.001 & 33.06 & 31.22 & 100.00\\
+rbf & 0.01 & 33.06 & 31.24 & 100.00\\
+rbf & 0.1 & 38.24 & 35.42 & 99.10\\
+rbf & 1 & 61.62 & 42.10 & 95.34\\
+poly & 0.0001 & 11.46 & 11.08 & 100.00\\
+poly & 0.001 & 11.46 & 11.08 & 100.00\\
+poly & 0.01 & 15.84 & 14.80 & 99.78\\
+poly & 0.1 & 33.36 & 27.50 & 98.26\\
+poly & 1 & 60.62 & 33.64 & 95.36\\}
+\newcommand{\PairRows}{cat, dog & 142 & 211 & 353 & 17.65\%\\
+automobile, truck & 174 & 178 & 352 & 17.60\%\\
+deer, frog & 189 & 132 & 321 & 16.05\%\\}
+\newcommand{\ClusterRows}{0 & 70 & 214 & 69 & 97 & 80 & 70 & 63 & 209 & 160 & 400\\
+1 & 415 & 109 & 131 & 53 & 68 & 88 & 24 & 74 & 447 & 144\\
+2 & 16 & 90 & 89 & 120 & 95 & 70 & 155 & 48 & 15 & 26\\
+3 & 252 & 72 & 91 & 78 & 24 & 62 & 41 & 35 & 109 & 62\\
+4 & 69 & 88 & 162 & 136 & 136 & 140 & 145 & 181 & 48 & 125\\
+5 & 110 & 235 & 177 & 180 & 205 & 137 & 168 & 113 & 153 & 130\\
+6 & 22 & 93 & 138 & 120 & 167 & 131 & 258 & 123 & 8 & 65\\
+7 & 46 & 99 & 143 & 216 & 225 & 302 & 146 & 217 & 60 & 48\\}
+\newcommand{\LocalFindings}{The clean patch network scored 52.10\% and random grouping scored 48.40\%. The signed clean-minus-shuffled difference was +3.7 points. The ordinary dense MLP scored 41.57\%. The paired patch difference cannot be attributed to a change in parameter count. Contiguous neighbourhoods helped the shared first layer. The dense-to-patch difference also includes changes in connectivity and sharing.}
+\newcommand{\MemoryFindings}{The clean validation threshold was crossed at epoch 1. Assigned-label accuracy crossed at epoch 33. Under this definition, transferable learning preceded substantial random-label fitting. At epoch 65 the MLP predicted the assigned label on 61.20\% of flipped examples. Clean validation peaked at 38.74\% in epoch 30 and ended at 33.94\%. On the identical flipped images, original-label accuracy ended at 13.30\%. The threshold describes substantial random-label fitting and cannot date the first memorised example.}
+\newcommand{\CleanFindings}{The clean CNN attained 52.66\% on the official test images, and the dense reference attained 41.57\%. Validation selected epochs 6 and 7, respectively. This establishes the clean baseline for testing the locality hypothesis.}
+\newcommand{\PixelFindings}{Pixel shuffling changed CNN accuracy by -13.84 points and MLP accuracy by +1.64 points. The fixed permutation preserves every input value while changing the neighbours presented to each convolution.}
+\newcommand{\TileFindings}{The clean-minus-shuffled gap was +13.8 percentage points for the CNN and -1.6 for the dense MLP. Holding tiles intact changed CNN accuracy by +6.5 points relative to full shuffling. This pattern supports sensitivity to local neighbourhoods. Tile boundaries and changed global positions limit finer attribution.}
+\newcommand{\ConfidenceFindings}{CNN mean confidence on errors was 41.63\% on clean images, 31.89\% on pixel images, 37.43\% on tile images. Full shuffling changed the error count by +1384 out of 10,000 and mean error confidence by -9.7 points. These conditional averages describe a different set of mistaken images in each condition.}
+\newcommand{\EncoderSelection}{Validation MSE selected width 128; test reconstruction errors also appear for the representation comparison required in Q3(c).}
+\newcommand{\ReconstructionFindings}{The selected width represents 3,072 image coordinates using 128 latent coordinates. This ratio compares dimensions; the code and the input image use different numerical precision.}
+\newcommand{\DenoiseFindings}{Frozen-CNN test accuracy was 26.78\% for corrupted, 26.28\% for clean AE, 27.05\% for denoising AE. Denoising changed accuracy by +0.27 percentage points relative to the corrupted image. It corrected 2379 previously wrong predictions and spoiled 2352 previously correct ones (paired exact McNemar $p=0.705$). The observed net change gives little evidence of a reliable improvement. The original clean-input CNN accuracy of 52.66\% shows how much discriminative information remains unrecovered. In total, 4,731 images changed correctness. The net change conceals how often the classifier reversed individual decisions.}
+\newcommand{\ProbeFindings}{In order of increasing test MSE the widths were 128, 32, 8. In descending probe accuracy the widths were 128, 32, 8. The rankings agree in this sweep. Width is a shared explanatory variable, so this does not establish that improving MSE causes better classification. The strongest frozen readout attained 39.78\%. The experiment measures information accessible to a linear classifier.}
+\newcommand{\SweepFindings}{At small $C$, classification violations incur a relatively small penalty. Jointly low training and validation scores suggest underfitting. The table also shows when additional fitting on training data has a smaller return on validation.}
+\newcommand{\SvmFindings}{Validation selected rbf with $C=1$; the frozen SVM achieved 42.79\% on test. The winner lies at the upper end of the evaluated grid; validation does not establish that it is a global optimum. For linear, validation peaked at $C=1$ (37.06\%); raising $C$ from 0.0001 to 1 moved training accuracy from 28.88\% to 45.14\%. At $C=1$ its train--validation gap was 8.08 points. For rbf, validation peaked at $C=1$ (42.10\%); raising $C$ from 0.0001 to 1 moved training accuracy from 33.06\% to 61.62\%. At $C=1$ its train--validation gap was 19.52 points. For poly, validation peaked at $C=1$ (33.64\%); raising $C$ from 0.0001 to 1 moved training accuracy from 11.46\% to 60.62\%. At $C=1$ its train--validation gap was 26.98 points. A wide positive gap at high $C$ indicates greater sensitivity to the training sample. The support-vector fraction in the plot counts each training point once across the binary subproblems.}
+\newcommand{\PairExamples}{The combined error counts were cat/dog (353), automobile/truck (352), deer/frog (321). Of the six near-boundary test examples, 4 received an incorrect multiclass prediction, including 3 predictions outside the inspected pair. Test image 2233 is a cat with score -0.000942 and predicted class airplane. Test image 9652 is a dog with score -0.000475 and predicted class ship. Test image 8366 is a automobile with score +0.000617 and predicted class automobile. Test image 2482 is a truck with score +0.000056 and predicted class automobile. Test image 6154 is a deer with score +0.005962 and predicted class airplane. Test image 1245 is a frog with score -0.000017 and predicted class frog.}
+\newcommand{\ClusterSelection}{K-means uses ten initializations per candidate on the training subset. Validation silhouette on the fixed sample of 2,000 by candidate count was 8 (0.0771), 10 (0.0673), 15 (0.0576), 20 (0.0439). The selected count was 8. We assigned official test images to centroids before inspecting their labels.}
+\newcommand{\ClusterFindings}{Test ARI was 0.0488 and test NMI was 0.0817. ARI compares pairwise assignment agreements after adjustment for chance. NMI measures the information shared by cluster identity and class.}
+\newcommand{\OverlapFindings}{The class distributions for cat and deer overlap by 90.40\% across clusters. The SVM directly swaps these two classes on 7.65\% of their test examples. Overlap sums the smaller class-conditional mass in each cluster; the swap rate counts supervised errors into the other class. Similar coarse cluster memberships can coexist with a separating supervised boundary.}
+\newcommand{\AbstractFindings}{Which image properties support recognition on CIFAR10? We intervene on neighbourhood structure, labels and reconstruction targets in one stratified split. The CNN's clean-to-shuffled accuracy gap was 13.84 points; the dense MLP's gap was -1.64 points. Denoising corrected 2,379 previously incorrect predictions and introduced 2,352 errors. On a frozen autoencoder representation the validation-selected SVM attained 42.79\% test accuracy. The paired comparisons distinguish pixel fidelity, linear class readout and unsupervised cluster membership.}
+\newcommand{\Conclusions}{Preserving intact tiles changed CNN accuracy by +6.46 points relative to full pixel shuffling. In order of increasing test MSE the widths were 128, 32, 8. In descending probe accuracy the widths were 128, 32, 8. The rankings agree in this sweep. Width is a shared explanatory variable, so this does not establish that improving MSE causes better classification. The paired counts in the denoising experiment yield a net change of +27 successful predictions. These results concern the selected readouts and fixed training budgets. The supervised and unsupervised class-pair comparison further separates global cluster membership from decision-boundary geometry.}

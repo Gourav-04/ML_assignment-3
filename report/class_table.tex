@@ -1,0 +1,16 @@
+\begin{table}[ht]\centering\small
+\caption{Matched classifiers on the official test set. Conf. is confidence on errors.}\label{tab:class}
+\begin{tabular}{lrrrrr}
+\toprule
+Model & Input & Params & Acc. & Errors & Conf.\\
+\midrule
+mlp & clean & 101098 & 41.6\% & 5843 & 34.5\%\\
+mlp & pixel & 101098 & 43.2\% & 5679 & 35.5\%\\
+mlp & tile & 101098 & 40.6\% & 5941 & 34.7\%\\
+cnn & clean & 100074 & 52.7\% & 4734 & 41.6\%\\
+cnn & pixel & 100074 & 38.8\% & 6118 & 31.9\%\\
+cnn & tile & 100074 & 45.3\% & 5472 & 37.4\%\\
+patch & clean & 100410 & 52.1\% & 4790 & 42.0\%\\
+patch & pixel & 100410 & 48.4\% & 5160 & 39.4\%\\
+\bottomrule\end{tabular}
+\end{table}

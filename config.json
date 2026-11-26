@@ -1,0 +1,7 @@
+{
+  "batch_size": 256, "learning_rate": 0.001, "classifier_epochs": 7,
+  "memorisation_epochs": 65, "memorisation_samples": 4000, "flip_fraction": 0.25,
+  "ae_epochs": 7, "bottlenecks": [8, 32, 128], "noise_sd": 0.2,
+  "svm_samples": 5000, "C": [0.0001, 0.001, 0.01, 0.1, 1],
+  "kernels": ["linear", "rbf", "poly"], "cluster_counts": [8, 10, 15, 20]
+}

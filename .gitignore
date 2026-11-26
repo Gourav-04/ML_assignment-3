@@ -1,0 +1,9 @@
+data/
+__pycache__/
+.venv/
+*.pyc
+report/*.aux
+report/*.log
+report/*.out
+COMMIT.txt
+*.bundle
